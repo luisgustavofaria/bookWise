@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 
 const Container = styled.div`
   display: flex;
@@ -42,7 +41,7 @@ const LoginBox = styled.div`
   }
 `
 
-const Login = styled.form`
+const Login = styled.div`
   margin-top: 40px;
 
   display: flex;
@@ -69,7 +68,12 @@ const Login = styled.form`
     background-color: ${(props) => props.theme.colors.gray[600]};
   }
 `
+import Image from 'next/image'
+import { signIn, useSession } from 'next-auth/react'
+
 export default function Home() {
+  const session = useSession()
+
   return (
     <Container>
       <ImageContainer>
@@ -90,7 +94,7 @@ export default function Home() {
           <h1>Boas vindas!</h1>
           <h2>Faça seu login ou acesse como visitante.</h2>
           <Login>
-            <button>
+            <button onClick={() => signIn('google')}>
               <Image
                 width={32}
                 height={32}
@@ -101,6 +105,7 @@ export default function Home() {
               />
               <p>Entrar com Google</p>
             </button>
+            {/* <p>{JSON.stringify(session.data)}</p> */}
             <button>
               <Image
                 width={32}
