@@ -3,6 +3,12 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   height: 100vh;
+  padding: 5px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 const ImageContainer = styled.div`
   width: 40%;
@@ -13,8 +19,28 @@ const ImageContainer = styled.div`
     overflow: hidden;
     width: 50px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     display: none;
+  }
+`
+const ImageContainerMobile = styled.div`
+  position: relative;
+  display: none;
+
+  margin: 0 auto;
+  //max-width: 372px;
+  width: 100%;
+
+  img {
+    border-radius: 20px;
+    overflow: hidden;
+    //max-width: 372px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 600px) {
+    display: block;
   }
 `
 
@@ -23,6 +49,8 @@ const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
 `
 
 const LoginBox = styled.div`
@@ -89,6 +117,19 @@ export default function Home() {
           sizes="50vw"
         />
       </ImageContainer>
+      <ImageContainerMobile>
+        <Image
+          height={100}
+          width={100}
+          //fill
+          //style={{ objectFit: 'cover' }}
+          alt="login"
+          src="/imageMobile.png"
+          priority
+          quality={100}
+          sizes="50vw"
+        />
+      </ImageContainerMobile>
       <LoginContainer>
         <LoginBox>
           <h1>Boas vindas!</h1>
@@ -106,7 +147,7 @@ export default function Home() {
               <p>Entrar com Google</p>
             </button>
             {/* <p>{JSON.stringify(session.data)}</p> */}
-            <button>
+            <button onClick={() => signIn('google')}>
               <Image
                 width={32}
                 height={32}
