@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   height: 100vh;
-  padding: 5px;
+  padding: 20px;
   width: 100%;
 
   @media (max-width: 600px) {
@@ -99,7 +99,7 @@ const Login = styled.div`
 import Image from 'next/image'
 import { signIn, useSession } from 'next-auth/react'
 
-export default function Home() {
+export default function LoginPage() {
   const session = useSession()
 
   return (
