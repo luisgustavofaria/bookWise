@@ -20,14 +20,14 @@ const Logo = styled.div`
   }
 `
 
-const MenuItem = styled.div`
+const MenuPage = styled.div`
   background: ${(props) => props.theme.colors.gray[700]};
   display: flex;
   flex-direction: column;
   gap: 16px;
 `
 
-const Item = styled.div`
+const Page = styled.div`
   background: ${(props) => props.theme.colors.gray[700]};
   display: flex;
   align-items: center;
@@ -101,23 +101,23 @@ export default function NavBar() {
           quality={100}
         />
       </Logo>
-      <MenuItem>
-        <Item>
+      <MenuPage>
+        <Page>
           <div></div>
           <ChartLineUp size={32} />
           <span>Início</span>
-        </Item>
-        <Item>
+        </Page>
+        <Page>
           <div></div>
           <Binoculars size={32} />
           <span>Explorar</span>
-        </Item>
-        <Item>
+        </Page>
+        <Page>
           <div></div>
           <User size={32} />
           <span>Perfil</span>
-        </Item>
-      </MenuItem>
+        </Page>
+      </MenuPage>
       <Profile>
         <span>NomePerfil</span>
         <SignOut size={32} color="#F75A68" />
