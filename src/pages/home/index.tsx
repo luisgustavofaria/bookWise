@@ -20,7 +20,7 @@ const ContainerMain = styled.div`
   padding: 52px 96px 0 96px;
 `
 
-const Page = styled.div`
+const PageHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
@@ -36,10 +36,17 @@ const Page = styled.div`
     color: ${(props) => props.theme.colors.green[100]};
   }
 `
+const MainStyles = styled.div`
+  display: flex;
+  gap: 64px;
+`
 
 const MyBooks = styled.div`
   margin-top: 40px;
   width: 608px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `
 
 const Title = styled.div`
@@ -74,7 +81,6 @@ const Title = styled.div`
 `
 
 const BookCard = styled.div`
-  margin-top: 16px;
   background-color: ${(props) => props.theme.colors.gray[600]};
   padding: 20px 24px;
   border-radius: 8px;
@@ -102,6 +108,9 @@ const Book = styled.div`
 
 const BookDetails = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const MainInfo = styled.div``
@@ -235,16 +244,34 @@ const Frame2 = styled.div`
   }
 `
 
+const TrendingBooks = styled.div`
+  //border: solid 1px red;
+  margin-top: 40px;
+  width: 324px;
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    color: ${(props) => props.theme.colors.purple[100]};
+  }
+`
+
+const ShorterBook = styled(Book)`
+  width: 64px;
+  height: 94px;
+`
+
 export default function Home() {
   return (
     <Container>
       <NavBar />
       <ContainerMain>
-        <Page>
+        <PageHeader>
           <ChartLineUp size={32} />
           <span>Início</span>
-        </Page>
-        <div>
+        </PageHeader>
+
+        <MainStyles>
           <div>
             <MyBooks>
               <Title>
@@ -407,7 +434,91 @@ export default function Home() {
               </List>
             </OtherBooks>
           </div>
-        </div>
+
+          <TrendingBooks>
+            <Title>
+              <span>Sua última leitura</span>
+              <div>
+                <span>Ver todas</span>
+                <CaretRight size={16} />
+              </div>
+            </Title>
+            <List>
+              <BookCard>
+                <ShorterBook>
+                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                </ShorterBook>
+                <BookDetails>
+                  <TitleInfo>
+                    <BookTitle>Entendendo Algoritmos</BookTitle>
+                    <BookAuthor>Aditya Bhargava</BookAuthor>
+                  </TitleInfo>
+                  <div>
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} />
+                  </div>
+                </BookDetails>
+              </BookCard>
+              <BookCard>
+                <ShorterBook>
+                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                </ShorterBook>
+                <BookDetails>
+                  <TitleInfo>
+                    <BookTitle>Entendendo Algoritmos</BookTitle>
+                    <BookAuthor>Aditya Bhargava</BookAuthor>
+                  </TitleInfo>
+                  <div>
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} />
+                  </div>
+                </BookDetails>
+              </BookCard>
+              <BookCard>
+                <ShorterBook>
+                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                </ShorterBook>
+                <BookDetails>
+                  <TitleInfo>
+                    <BookTitle>Entendendo Algoritmos</BookTitle>
+                    <BookAuthor>Aditya Bhargava</BookAuthor>
+                  </TitleInfo>
+                  <div>
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} />
+                  </div>
+                </BookDetails>
+              </BookCard>
+              <BookCard>
+                <ShorterBook>
+                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                </ShorterBook>
+                <BookDetails>
+                  <TitleInfo>
+                    <BookTitle>Entendendo Algoritmos</BookTitle>
+                    <BookAuthor>Aditya Bhargava</BookAuthor>
+                  </TitleInfo>
+                  <div>
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} weight="fill" />
+                    <Star size={16} />
+                  </div>
+                </BookDetails>
+              </BookCard>
+            </List>
+          </TrendingBooks>
+        </MainStyles>
       </ContainerMain>
     </Container>
   )

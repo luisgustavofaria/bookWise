@@ -76,6 +76,14 @@ const Profile = styled.div`
   margin-bottom: 24px;
   cursor: pointer;
 
+  > :first-child {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
   span {
     background: ${(props) => props.theme.colors.gray[700]};
     color: ${(props) => props.theme.colors.gray[200]};
@@ -119,6 +127,7 @@ export default function NavBar() {
         </Page>
       </MenuPage>
       <Profile>
+        <div></div>
         <span>NomePerfil</span>
         <SignOut size={32} color="#F75A68" />
       </Profile>
