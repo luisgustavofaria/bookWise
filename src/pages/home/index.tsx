@@ -5,7 +5,6 @@ import {
   ChartLineUp,
   SignOut,
   Star,
-  User,
 } from '@phosphor-icons/react'
 import Image from 'next/image'
 import styled from 'styled-components'
@@ -110,6 +109,7 @@ const MainInfo = styled.div``
 const MyInfo = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 12px;
 
   > span {
     color: ${(props) => props.theme.colors.gray[300]};
@@ -124,7 +124,6 @@ const MyInfo = styled.div`
 `
 
 const TitleInfo = styled.div`
-  margin-top: 12px;
   display: flex;
   flex-direction: column;
 `
@@ -151,6 +150,88 @@ const Opinion = styled.div`
     font-size: ${(props) => props.theme.fontSizes.sm};
     font-weight: ${(props) => props.theme.fontWeights.regular};
     line-height: ${(props) => props.theme.lineHeights.base};
+  }
+`
+
+const OtherBooks = styled.div`
+  //border: solid 1px red;
+  margin-top: 40px;
+  width: 608px;
+`
+
+const List = styled.div`
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`
+const Comment = styled.div`
+  background-color: ${(props) => props.theme.colors.gray[600]};
+  border-radius: 8px;
+  padding: 24px;
+  div,
+  a,
+  span,
+  svg {
+    background-color: ${(props) => props.theme.colors.gray[600]};
+  }
+`
+const Header = styled.div`
+  display: flex;
+  gap: 16px;
+
+  > :first-child {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  svg {
+    color: ${(props) => props.theme.colors.purple[100]};
+  }
+`
+const User = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  :first-child {
+    color: ${(props) => props.theme.colors.gray[100]};
+    font-size: ${(props) => props.theme.fontSizes.md};
+    font-weight: ${(props) => props.theme.fontWeights.regular};
+    line-height: ${(props) => props.theme.lineHeights.base};
+  }
+  :last-child {
+    color: ${(props) => props.theme.colors.gray[400]};
+    font-size: ${(props) => props.theme.fontSizes.sm};
+    font-weight: ${(props) => props.theme.fontWeights.regular};
+    line-height: ${(props) => props.theme.lineHeights.base};
+  }
+`
+
+const Frame1 = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 32px;
+`
+const Frame2 = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > :last-child {
+    color: ${(props) => props.theme.colors.gray[300]};
+    font-size: ${(props) => props.theme.fontSizes.sm};
+    font-weight: ${(props) => props.theme.fontWeights.regular};
+    line-height: ${(props) => props.theme.lineHeights.base};
+
+    a {
+      color: ${(props) => props.theme.colors.purple[100]};
+      font-weight: ${(props) => props.theme.fontWeights.bold};
+    }
   }
 `
 
@@ -204,9 +285,128 @@ export default function Home() {
                 </BookDetails>
               </BookCard>
             </MyBooks>
-            <div></div>
+            <OtherBooks>
+              <Title>
+                <span>Avaliações mais recentes</span>
+              </Title>
+              <List>
+                <Comment>
+                  <Header>
+                    <div></div>
+                    <User>
+                      <span>Jaxson Dias</span>
+                      <span>Hoje</span>
+                    </User>
+                    <div>
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} />
+                    </div>
+                  </Header>
+                  <Frame1>
+                    <Book>
+                      <Image
+                        src="/books/entendendo-algoritmos.png"
+                        fill
+                        alt=""
+                      />
+                    </Book>
+                    <Frame2>
+                      <TitleInfo>
+                        <BookTitle>O Hobbit</BookTitle>
+                        <BookAuthor>J.R.R. Tolkien</BookAuthor>
+                      </TitleInfo>
+                      <span>
+                        Semper et sapien proin vitae nisi. Feugiat neque integer
+                        donec et aenean posuere amet ultrices. Cras fermentum id
+                        pulvinar varius leo a in. Amet libero pharetra nunc
+                        elementum fringilla velit ipsum. Sed vulputate massa
+                        velit nibh... <a>ver mais</a>
+                      </span>
+                    </Frame2>
+                  </Frame1>
+                </Comment>
+                <Comment>
+                  <Header>
+                    <div></div>
+                    <User>
+                      <span>Jaxson Dias</span>
+                      <span>Hoje</span>
+                    </User>
+                    <div>
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} />
+                    </div>
+                  </Header>
+                  <Frame1>
+                    <Book>
+                      <Image
+                        src="/books/entendendo-algoritmos.png"
+                        fill
+                        alt=""
+                      />
+                    </Book>
+                    <Frame2>
+                      <TitleInfo>
+                        <BookTitle>O Hobbit</BookTitle>
+                        <BookAuthor>J.R.R. Tolkien</BookAuthor>
+                      </TitleInfo>
+                      <span>
+                        Semper et sapien proin vitae nisi. Feugiat neque integer
+                        donec et aenean posuere amet ultrices. Cras fermentum id
+                        pulvinar varius leo a in. Amet libero pharetra nunc
+                        elementum fringilla velit ipsum. Sed vulputate massa
+                        velit nibh... <a>ver mais</a>
+                      </span>
+                    </Frame2>
+                  </Frame1>
+                </Comment>
+                <Comment>
+                  <Header>
+                    <div></div>
+                    <User>
+                      <span>Jaxson Dias</span>
+                      <span>Hoje</span>
+                    </User>
+                    <div>
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} weight="fill" />
+                      <Star size={16} />
+                    </div>
+                  </Header>
+                  <Frame1>
+                    <Book>
+                      <Image
+                        src="/books/entendendo-algoritmos.png"
+                        fill
+                        alt=""
+                      />
+                    </Book>
+                    <Frame2>
+                      <TitleInfo>
+                        <BookTitle>O Hobbit</BookTitle>
+                        <BookAuthor>J.R.R. Tolkien</BookAuthor>
+                      </TitleInfo>
+                      <span>
+                        Semper et sapien proin vitae nisi. Feugiat neque integer
+                        donec et aenean posuere amet ultrices. Cras fermentum id
+                        pulvinar varius leo a in. Amet libero pharetra nunc
+                        elementum fringilla velit ipsum. Sed vulputate massa
+                        velit nibh... <a>ver mais</a>
+                      </span>
+                    </Frame2>
+                  </Frame1>
+                </Comment>
+              </List>
+            </OtherBooks>
           </div>
-          <div>Livros Populares</div>
         </div>
       </ContainerMain>
     </Container>
