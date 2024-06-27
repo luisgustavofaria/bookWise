@@ -283,7 +283,12 @@ export default function Home() {
               </Title>
               <BookCard>
                 <Book>
-                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                  <Image
+                    src="/books/entendendo-algoritmos.png"
+                    width={108}
+                    height={152}
+                    alt=""
+                  />
                 </Book>
                 <BookDetails>
                   <MainInfo>
@@ -336,7 +341,8 @@ export default function Home() {
                     <Book>
                       <Image
                         src="/books/entendendo-algoritmos.png"
-                        fill
+                        width={108}
+                        height={152}
                         alt=""
                       />
                     </Book>
@@ -374,7 +380,8 @@ export default function Home() {
                     <Book>
                       <Image
                         src="/books/entendendo-algoritmos.png"
-                        fill
+                        width={108}
+                        height={152}
                         alt=""
                       />
                     </Book>
@@ -412,7 +419,8 @@ export default function Home() {
                     <Book>
                       <Image
                         src="/books/entendendo-algoritmos.png"
-                        fill
+                        width={108}
+                        height={152}
                         alt=""
                       />
                     </Book>
@@ -446,7 +454,12 @@ export default function Home() {
             <List>
               <BookCard>
                 <ShorterBook>
-                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                  <Image
+                    src="/books/entendendo-algoritmos.png"
+                    width={64}
+                    height={94}
+                    alt=""
+                  />
                 </ShorterBook>
                 <BookDetails>
                   <TitleInfo>
@@ -464,7 +477,12 @@ export default function Home() {
               </BookCard>
               <BookCard>
                 <ShorterBook>
-                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                  <Image
+                    src="/books/entendendo-algoritmos.png"
+                    width={64}
+                    height={94}
+                    alt=""
+                  />
                 </ShorterBook>
                 <BookDetails>
                   <TitleInfo>
@@ -482,7 +500,12 @@ export default function Home() {
               </BookCard>
               <BookCard>
                 <ShorterBook>
-                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                  <Image
+                    src="/books/entendendo-algoritmos.png"
+                    width={64}
+                    height={94}
+                    alt=""
+                  />
                 </ShorterBook>
                 <BookDetails>
                   <TitleInfo>
@@ -500,7 +523,12 @@ export default function Home() {
               </BookCard>
               <BookCard>
                 <ShorterBook>
-                  <Image src="/books/entendendo-algoritmos.png" fill alt="" />
+                  <Image
+                    src="/books/entendendo-algoritmos.png"
+                    width={64}
+                    height={94}
+                    alt=""
+                  />
                 </ShorterBook>
                 <BookDetails>
                   <TitleInfo>

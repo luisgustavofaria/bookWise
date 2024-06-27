@@ -102,6 +102,17 @@ import { signIn, useSession } from 'next-auth/react'
 export default function LoginPage() {
   const session = useSession()
 
+  const isSignedIn = session.status === 'authenticated'
+
+  const handleLogin = (provider: string) => {
+    // Chame o método signIn do NextAuth
+    signIn(provider, {
+      callbackUrl: '/home', // Redireciona para a página inicial após login
+    })
+  }
+
+  console.log(session)
+
   return (
     <Container>
       <ImageContainer>
@@ -135,7 +146,7 @@ export default function LoginPage() {
           <h1>Boas vindas!</h1>
           <h2>Faça seu login ou acesse como visitante.</h2>
           <Login>
-            <button onClick={() => signIn('google')}>
+            <button onClick={() => handleLogin('google')}>
               <Image
                 width={32}
                 height={32}
@@ -147,11 +158,11 @@ export default function LoginPage() {
               <p>Entrar com Google</p>
             </button>
             {/* <p>{JSON.stringify(session.data)}</p> */}
-            <button onClick={() => signIn('google')}>
+            <button onClick={() => handleLogin('github')}>
               <Image
                 width={32}
                 height={32}
-                alt="hithub"
+                alt="github"
                 src="/github.png"
                 priority
                 quality={100}

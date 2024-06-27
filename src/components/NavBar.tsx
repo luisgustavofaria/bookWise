@@ -1,5 +1,3 @@
-import { Binoculars, ChartLineUp, SignOut, User } from '@phosphor-icons/react'
-import Image from 'next/image'
 import styled from 'styled-components'
 
 const NavBarContainer = styled.div`
@@ -74,7 +72,6 @@ const Profile = styled.div`
   margin-top: auto;
   gap: 16px;
   margin-bottom: 24px;
-  cursor: pointer;
 
   > :first-child {
     position: relative;
@@ -93,10 +90,21 @@ const Profile = styled.div`
   }
   svg {
     background: ${(props) => props.theme.colors.gray[700]};
+    cursor: pointer;
   }
 `
 
+import { Binoculars, ChartLineUp, SignOut, User } from '@phosphor-icons/react'
+import Image from 'next/image'
+import { signOut } from 'next-auth/react'
+
 export default function NavBar() {
+  const handleLogout = () => {
+    signOut({
+      callbackUrl: '/', // Redireciona para a página de login após logout
+    })
+  }
+
   return (
     <NavBarContainer>
       <Logo>
@@ -129,7 +137,7 @@ export default function NavBar() {
       <Profile>
         <div></div>
         <span>NomePerfil</span>
-        <SignOut size={32} color="#F75A68" />
+        <SignOut onClick={handleLogout} size={32} color="#F75A68" />
       </Profile>
     </NavBarContainer>
   )
